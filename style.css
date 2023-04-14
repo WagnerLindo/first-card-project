@@ -1,0 +1,163 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #edf2f8;
+  display: flex;
+  margin: 0px;
+  justify-content: center;
+  align-items: center;
+}
+html,
+body {
+  height: 100%;
+}
+.card {
+  max-width: 720px;
+  display: flex;
+  flex-basis: 100%;
+  border-radius: 20px;
+  padding: 0px 30px;
+}
+.card-image img {
+  max-width: 100%;
+  height: 100%;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  object-fit: cover;
+  object-position: 22%;
+}
+.card-content {
+  background-color: #ffffff;
+  color: #000000dc;
+  font-weight: 700;
+  font-family: "Manrope", sans-serif;
+  padding: 16px 40px;
+  text-align: justify;
+  position: relative;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+.title {
+  font-size: 20px;
+}
+.highlight {
+  color: darkblue;
+}
+.title:hover {
+  color: rgba(255, 0, 0, 0.631);
+}
+.description {
+  color: #0000005f;
+  font-size: 16px;
+  font-weight: 500;
+}
+.contentauthor {
+  display: flex;
+  justify-content: space-between;
+}
+.author {
+  display: flex;
+  gap: 22px;
+}
+.marginphoto {
+  display: flex;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+}
+.datos {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.name {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+}
+.date {
+  color: #0000005f;
+  font-size: 15px;
+  margin: 0;
+  font-weight: 500;
+}
+.share {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  position: relative;
+  align-self: flex-end;
+  display: flex;
+}
+.share-icon {
+  padding: 5px;
+  cursor: pointer;
+  background-color: #ebf1f5;
+  border-radius: 50%;
+}
+.share:hover .sharecard {
+  display: flex;
+}
+.sharecard::before {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: #49556b;
+  bottom: -10px;
+  transform: rotate(45deg);
+}
+.sharecard {
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  gap: 20px;
+  background-color: #49556b;
+  width: 250px;
+  border-radius: 10px;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+}
+.sharecard p {
+  letter-spacing: 5px;
+  color: #9aa6bc;
+}
+@media (max-width: 640px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+  }
+  .card-image img {
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 0px;
+  }
+  .card-content {
+    border-bottom-left-radius: 12px;
+    border-top-right-radius: 0px;
+  }
+  .share {
+    position: unset;
+  }
+  .sharecard {
+    width: 100%;
+    top: unset;
+    height: 70px;
+    bottom: 0px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+  }
+  .sharecard::before {
+    display: none;
+  }
+  .share-icon {
+    position: relative;
+    z-index: 10;
+    border-radius: 50%;
+  }
+  .share-icon:hover {
+    background-color: #70819a;
+  }
+}
